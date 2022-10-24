@@ -1,0 +1,151 @@
+# Exercice #01 â€” travailler avec Git.
+
+Pour cet exercice vous devez noter les commandes que vous avez exÃ©cutÃ©es, vous devrez donc utiliser Git en ligne de commande (CLI). Notez les commandes Git sous leur point. Remettez un dossier complet incluant les trois rÃ©pertoires Git et ce fichier texte.
+
+## NumÃ©ro 1 : Commande de base
+
+1.	CrÃ©ez un dÃ©pÃ´t git en local
+
+```
+git init 
+
+```
+2.	CrÃ©ez les 3 fichiers suivant et y mettre quelques lignes de texte
+	a.	index.html
+	b.	 style.css
+	c.	 main.js
+
+```
+ cat > index.html + ENTER
+(ecrire ici) ctrl + c pour sauvegarder e sortir
+ cat > style.css + ENTER
+(ecrire ici) ctrl + c pour sauvegarder e sortir
+cat > main.js + ENTER
+(ecrire ici) ctrl + c pour sauvegarder e sortir
+
+```
+3.VÃ©rifiez lâ€™Ã©tat de votre dÃ©pÃ´t
+
+```
+git status
+
+```
+
+4.CrÃ©ez un commit avec ces trois fichiers
+
+```
+git add .
+git commit -m "creation 3 fichiers de base"
+
+```
+
+5.Faites la commande suivante : 
+
+`` git status >> git_exercice1.log && git log >> git_exercice1.log``
+
+6.	Faites un commit pour ajouter le nouveau fichier crÃ©er (git_exercice1.log)
+
+```
+git add git_exercice1.log
+git commit -m "creation fichier log"
+
+```
+
+## NumÃ©ro 2 : Travailler avec un distant (remote)
+
+1.CrÃ©ez un dÃ©pÃ´t nommÃ© Â« n61-remote-git Â» sur votre compte Github.com. Si vous nâ€™avez pas de compte, câ€™est le bon moment pour en crÃ©er unâ€¦
+2.Clonez le dÃ©pÃ´t vide en local
+
+```
+git clone https://github.com/alanafbm/n61-remote-git.git  
+
+```
+3.	CrÃ©ez les 3 fichiers suivant et mettez-y quelques lignes de texte
+	a.	index.html
+	b.	 style.css
+	c.	 main.js
+
+```
+ cat > index.html + ENTER
+(ecrire ici) ctrl + c pour sauvegarder e sortir
+ cat > style.css + ENTER
+(ecrire ici) ctrl + c pour sauvegarder e sortir
+cat > main.js + ENTER
+(ecrire ici) ctrl + c pour sauvegarder e sortir
+
+```
+4.	VÃ©rifiez lâ€™Ã©tat de votre dÃ©pÃ´t
+
+```
+git status
+
+```
+5.	CrÃ©ez un commit avec ces trois fichiers
+
+```
+git add .
+git commit -m "creation 3 fichiers de base apres git clone"
+
+```
+6.	Mettez Ã  jour votre dÃ©pÃ´t distant
+
+```
+git push -u origin main
+
+```
+7.	Faites une capture dâ€™Ã©cran de votre dÃ©pÃ´t distant et ajoutez le fichier image dans votre commit.
+
+```
+git status
+git add .
+git commit -m "add capture du depot distant"
+git push -u origin main
+
+```
+
+## NumÃ©ro 3 : Travailler en Ã©quipe
+1.	Forkez le projet https://github.com/emmacharp/exercice_git_equipe sur votre compte github. 
+
+2.	Clonez le dÃ©pÃ´t en local
+
+```
+git clone https://github.com/alanafbm/exercice_git_equipe.git
+
+```
+3.	Configurez le dÃ©pÃ´t upstream pour quâ€™il pointe vers le dÃ©pÃ´t que vous avez forkÃ© (et non votre dÃ©pÃ´t distant)
+
+```
+git remote add upstream https://github.com/alanafbm/exercice_git_equipe.git
+
+```
+4.	ExÃ©cutez la commande ``git remote -v`` et copiez le contenu ici :
+
+```
+$ git remote -v
+origin  https://github.com/alanafbm/n61-remote-git.git (fetch)
+origin  https://github.com/alanafbm/n61-remote-git.git (push) 
+upstream        https://github.com/alanafbm/exercice_git_equipe.git (fetch)
+upstream        https://github.com/alanafbm/exercice_git_equipe.git (push)
+
+```
+5.	Remplacez Â« Jonathan Martel Â» dans le fichier main.js et inscrivez-y votre nom. 
+6.	Commitez vos changements, mettez Ã  jour votre distant (remote)
+
+```
+git add .
+git commit -m "Changement du nom  main.js"
+git push 
+
+```
+
+
+7.	Pour gÃ©nÃ©rer un conflit de code, ajoutez un nouveau remote avec lequel nous allons jouer en utilisant la commande suivante :  
+`` git remote add depotconflit https://github.com/emmacharp/exercice_git_equipe_conflit``
+8.	Faite la mise Ã  jour et la fusion de votre dÃ©pÃ´t local avec le nouveau dÃ©pÃ´t distant :  
+``git pull depotconflit master``  
+Et copiez la rÃ©ponse du terminal ici :  
+```
+RÃ©ponse copiÃ©e ici
+```
+9.	RÃ©glez les conflits, finalisez la fusion et mettez Ã  jour votre distant (push sur origin)
+10.	Sur Github.com, ouvrez une demande de pull-request vers https://github.com/emmacharp/exercice_git_equipe
